@@ -92,59 +92,32 @@ ScrollReveal().reveal(".experience-card, .service-card, .education, .project .im
 ScrollReveal().reveal("footer .group", { delay: 500, origin: "top", interval: 200 });
 
 // Contact Form
-const form = document.querySelector("form");
-const fullName = document.getElementById("name");
-const email = document.getElementById("email");
-const subject = document.getElementById("subject");
-const mess = document.getElementById("message");
+const scriptURL = "https://script.google.com/macros/s/AKfycbyZUbXllOqHmwOpk9trXC_uugOjNeGqxPS3AD9nujNZ-onNwCN5L1mEvCWqq70CtGhaKw/exec";
+const form = document.forms["Contact-Form"];
 
-function sendEmail() {
-   const bodyMessage = "Full Name: ${fullName.value}<br> Email: ${email.value}<br> Message: ${mess.value}";
-
-   Email.send({
-      Host: "smtp.elasticemail.com",
-      Username: "reynaldiagathahalohoaldi@gmail.com",
-      Password: "A1F504A652665AB49D2A4EAD28EF918EE6DB",
-      To: "reynaldiagathahalohoaldi@gmail.com",
-      From: document.getElementById("email").value,
-      Subject: subject.value,
-      Body: bodyMessage,
-   }).then((message) => {
-      if (message === "OK") {
-         Swal.fire({
-            title: "Berhasil!",
-            text: "Pesan berhasil terkirim",
-            icon: "success",
+if (form) {
+   form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      fetch(scriptURL, { method: "POST", body: new FormData(form) })
+         .then((response) => {
+            console.log("Success!", response);
+            Swal.fire({
+               title: "Berhasil!",
+               text: "Pesan berhasil terkirim",
+               icon: "success",
+            });
+            form.reset();
+         })
+         .catch((error) => {
+            console.error("Error!", error.message);
+            Swal.fire({
+               title: "Gagal!",
+               text: "Pesan gagal terkirim",
+               icon: "error",
+            });
+            form.reset();
          });
-      }
    });
+} else {
+   console.error('Form with name "submit-to-google-sheet" not found.');
 }
-
-function checkInputs() {
-   const items = document.querySelectorAll(".item");
-
-   for (const item of items) {
-      if (item.value == "") {
-         item.classList.add("error");
-         item.parentElement.classList.add("error");
-      }
-
-      item.addEventListener("keyup", () => {
-         if (item.value != "") {
-            item.classList.remove("error");
-            item.parentElement.classList.remove("error");
-         } else {
-            item.classList.add("error");
-            item.parentElement.classList.add("error");
-         }
-      });
-   }
-}
-
-form.addEventListener("submit", (e) => {
-   e.preventDefault();
-   checkInputs();
-
-   sendEmail();
-   form.reset();
-});

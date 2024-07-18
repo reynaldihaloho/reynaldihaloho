@@ -490,16 +490,16 @@
                      I'm always open to discussing product<br />
                      <span>design work or partnerships.</span>
                   </p>
-                  <form action="#" class="contact-form" onsubmit="sendEmail(); reset(); return false;">
+                  <form name="Contact-Form" class="contact-form">
                      <div class="first-row">
-                        <input type="text" placeholder="Name" class="item" id="name" />
+                        <input type="text" placeholder="Name" class="item" id="name" name="name" />
                      </div>
                      <div class="second-row">
-                        <input type="email" placeholder="Email" class="item" id="email" />
-                        <input type="text" placeholder="Subject" class="item" id="subject" />
+                        <input type="email" placeholder="Email" class="item" id="email" name="email" />
+                        <input type="text" placeholder="Subject" class="item" id="subject" name="subject" />
                      </div>
                      <div class="third-row">
-                        <textarea name="message" class="item" id="message" rows="7" placeholder="Message"> </textarea>
+                        <textarea name="message" class="item" id="message" name="message" rows="7" placeholder="Message"> </textarea>
                      </div>
                      <button class="btn" type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
                   </form>
