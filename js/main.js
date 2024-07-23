@@ -13,7 +13,6 @@ const maxItem = 8;
 let index = 1;
 
 const pagination = Math.ceil(galleryItems.length / maxItem);
-console.log(pagination)
 
 prev.addEventListener("click", function () {
    index--;
