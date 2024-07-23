@@ -385,6 +385,79 @@ header.sticky .nav-bar {
    font-size: var(--small-font-size);
 }
 
+/*=======Gallery section=======*/
+.gallery .gallery-items .item{
+   width: 25%;
+   float: left;
+   position: relative;
+}
+
+.gallery .gallery-items .item.hide{
+   display: none;
+}
+
+.gallery .gallery-items .item.show{
+   display: block;
+}
+
+@keyframes show {
+   0%{
+      opacity: 0;
+      transform: scale(0.9);
+   }
+   100%{
+      opacity: 1;
+      transform: scale(1);
+   }
+}
+
+.gallery .gallery-items .item img{
+   display: block;
+   width: 100%;
+}
+
+.gallery .gallery-items .item .caption{
+   position: absolute;
+   left: 0px;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, .5);
+   padding: 10px;
+   width: 100%;
+   color: #fff;
+}
+
+.gallery .pagination{
+   width: 100%;
+   float: left;
+   padding: 15px;
+   text-align: center;
+}
+
+.gallery .pagination div{
+   display: inline-block;
+   margin: 0 10px;
+}
+
+.gallery .pagination .page{
+   color: gray;
+}
+
+.gallery .pagination .prev, 
+.gallery .pagination .next{
+   color: #000;
+   border: 1px solid #000;
+   font-size: 15px;
+   padding: 7px 15px;
+   cursor: pointer   ;
+}
+
+.gallery .pagination .prev.disabled, 
+.gallery .pagination .next.disabled{
+   border-color: gray;
+   color: gray;
+   pointer-events: none;
+}
+
 /*=======Skills section=======*/
 .skills .container .content {
    width: 100%;
@@ -1099,6 +1172,11 @@ footer a {
       justify-content: start;
    }
 
+   /*=======Gallery section=======*/
+     .gallery-item {
+    flex: 1 1 calc(33.33% - 20px); /* 3 item per baris dengan jarak 20px */
+  }
+
    /*=======Get-in-touct=======*/
    .get-in-touch .contact-card {
       display: grid;
@@ -1196,6 +1274,12 @@ footer a {
    .media-icons {
       margin-bottom: 80px;
    }
+
+   /*=======Gallery section=======*/
+     .gallery-item {
+    flex: 1 1 calc(50% - 20px); /* 2 item per baris dengan jarak 20px */
+  }
+
 
    /*=======Get-in-touch section=======*/
    .get-in-touch .contact-card {
