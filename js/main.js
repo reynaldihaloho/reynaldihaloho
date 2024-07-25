@@ -59,8 +59,6 @@ window.onload = function () {
    check();
 }  
 
-
-
 //Service section - Modal
 const serviceModals = document.querySelectorAll(".services-modal");
 const learnmoreBtns = document.querySelectorAll(".learns-more-btn");
@@ -140,13 +138,13 @@ ScrollReveal({
 ScrollReveal().reveal(".home .info h2, .section-title-01, .section-title-02", { delay: 500, origin: "left" });
 ScrollReveal().reveal(".home .info h3, .home .info p, .about-info .btn", { delay: 600, origin: "right" });
 ScrollReveal().reveal(".home .info .btn", { delay: 700, origin: "bottom" });
-ScrollReveal().reveal(".media-icons i, .contact-left li", { delay: 500, origin: "left", interval: 200 });
+ScrollReveal().reveal(".media-icons i, .contact-left li,", { delay: 500, origin: "left", interval: 200 });
 ScrollReveal().reveal(".home-img, about-img", { delay: 500, origin: "bottom" });
 ScrollReveal().reveal(".about .description, .contact-right", { delay: 600, origin: "right" });
 ScrollReveal().reveal(".about .profesional-list li", { delay: 500, origin: "right", interval: 200 });
-ScrollReveal().reveal(".skills-description, service-description, .contact-card, contact-left h2", { delay: 700, origin: "left" });
+ScrollReveal().reveal(".skills-description, service-description, contact-left h2", { delay: 700, origin: "left" });
 ScrollReveal().reveal(".experience-card, .service-card, .education, .project .img-card", { delay: 800, origin: "bottom", interval: 200 });
-ScrollReveal().reveal("footer .group", { delay: 500, origin: "top", interval: 200 });
+ScrollReveal().reveal("footer .group, .about-img", { delay: 500, origin: "top", interval: 200 });
 
 // Contact Form
 const scriptURL = "https://script.google.com/macros/s/AKfycbyZUbXllOqHmwOpk9trXC_uugOjNeGqxPS3AD9nujNZ-onNwCN5L1mEvCWqq70CtGhaKw/exec";
