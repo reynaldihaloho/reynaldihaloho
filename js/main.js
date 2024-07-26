@@ -146,7 +146,7 @@ ScrollReveal().reveal("footer .group, .about-img, .pagination", { delay: 500, or
 
 // Contact Form
 // URL to Google Apps Script
-const scriptURL = "https://script.google.com/macros/s/AKfycbyZUbXllOqHmwOpk9trXC_uugOjNeGqxPS3AD9nujNZ-onNwCN5L1mEvCWqq70CtGhaKw/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbwp42u9C3oqfwE8teOG9ocSqYbELHAQdtedU6nJ9NVHh6OtacOz4YtlmsYhk4-Ivepd8g/exec";
 
 // Get the form element
 const form = document.forms["Contact-Form"];
