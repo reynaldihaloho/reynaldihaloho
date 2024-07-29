@@ -57,13 +57,13 @@ window.onload = function () {
     check();
 };
 
-// Service section - Modal
-const serviceModals = document.querySelectorAll(".services-modal");
+// Skills section - Modal
+const skillModals = document.querySelectorAll(".skills-modal");
 const learnmoreBtns = document.querySelectorAll(".learns-more-btn");
 const modalCloseBtns = document.querySelectorAll(".modals-close-btn");
 
 var modal = function (modalClick) {
-    serviceModals[modalClick].classList.add("active");
+    skillModals[modalClick].classList.add("active");
 };
 
 learnmoreBtns.forEach((learnmoreBtn, i) => {
@@ -74,7 +74,7 @@ learnmoreBtns.forEach((learnmoreBtn, i) => {
 
 modalCloseBtns.forEach((modalCloseBtn) => {
     modalCloseBtn.addEventListener("click", () => {
-        serviceModals.forEach((modalView) => {
+        skillModals.forEach((modalView) => {
             modalView.classList.remove("active");
         });
     });
@@ -139,9 +139,9 @@ ScrollReveal().reveal(".home .info .btn", { delay: 700, origin: "bottom" });
 ScrollReveal().reveal(".media-icons i, .contact-left li", { delay: 500, origin: "left", interval: 200 });
 ScrollReveal().reveal(".home-img, .about-img", { delay: 500, origin: "bottom" });
 ScrollReveal().reveal(".about .description, .contact-right, .gallery-items", { delay: 600, origin: "right" });
-ScrollReveal().reveal(".about .professional-list li", { delay: 500, origin: "right", interval: 200 });
-ScrollReveal().reveal(".skills-description, .service-description, .contact-left h2", { delay: 700, origin: "left" });
-ScrollReveal().reveal(".experience-card, .service-card, .education, .project .img-card", { delay: 800, origin: "bottom", interval: 200 });
+ScrollReveal().reveal(".about .profesional-list li", { delay: 500, origin: "right", interval: 200 });
+ScrollReveal().reveal(".skills-description, .skills-description, .contact-left h2", { delay: 700, origin: "left" });
+ScrollReveal().reveal(".experience-card, .skills-card, .education, .project .img-card", { delay: 800, origin: "bottom", interval: 200 });
 ScrollReveal().reveal("footer .group, .about-img, .pagination", { delay: 500, origin: "top", interval: 200 });
 
 // Contact Form

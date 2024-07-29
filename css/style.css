@@ -625,21 +625,12 @@ header.sticky .nav-bar {
     transform: scale(1.03);
 }
 
-/*=======Services section=======*/
-.services .container .content {
-    width: 100%;
-}
-
-.services {
-    margin-top: -10%;
-}
-
-.services-description h3 {
-    font-size: 2em;
+.skills-descriptions {
+    font-size: 1.7em;
     margin-bottom: 50px;
 }
 
-.services-list {
+.skills-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
     max-width: 100%;
@@ -647,7 +638,7 @@ header.sticky .nav-bar {
     gap: 20px;
 }
 
-.services-card {
+.skills-card {
     background: var(--card-bg-color);
     border-bottom: 3px solid var(--second-color);
     padding: 50px;
@@ -655,34 +646,34 @@ header.sticky .nav-bar {
     box-shadow: var(--box-shadow);
 }
 
-.services-card > i {
+.skills-card > i {
     color: var(--second-color);
     font-size: 3em;
     margin-bottom: 30px;
 }
 
-.services-card h3 {
+.skills-card h3 {
     font-size: 1.5em;
     font-weight: 700;
     line-height: 30px;
     margin-bottom: 20px;
 }
 
-.services-card .learns-more-btn {
+.skills-card .learns-more-btn {
     color: var(--third-color);
     cursor: pointer;
     transition: 0.3s ease;
 }
 
-.services-card .learns-more-btn i {
+.skills-card .learns-more-btn i {
     transition: 0.3s ease;
 }
 
-.services-card:hover .learns-more-btn i {
+.skills-card:hover .learns-more-btn i {
     transform: translateX(10px);
 }
 
-.services-modal {
+.skills-modal {
     z-index: 999999;
     position: fixed;
     width: 100%;
@@ -696,12 +687,12 @@ header.sticky .nav-bar {
     transition: 0.3s ease;
 }
 
-.services-modal.active {
+.skills-modal.active {
     visibility: visible;
     opacity: 1;
 }
 
-.services-modal-body {
+.skills-modal-body {
     position: relative;
     background: var(--modal-bg-color);
     max-width: 600px;
@@ -713,11 +704,11 @@ header.sticky .nav-bar {
     transition: 0.5s ease;
 }
 
-.services-modal.active .services-modal-body {
+.skills-modal.active .skills-modal-body {
     transform: translateY(0);
 }
 
-.services-modal-body .modals-close-btn {
+.skills-modal-body .modals-close-btn {
     position: absolute;
     top: 0;
     right: 0;
@@ -725,21 +716,21 @@ header.sticky .nav-bar {
     cursor: pointer;
 }
 
-.services-modal-body h3 {
+.skills-modal-body h3 {
     font-size: 2em;
 }
 
-.services-modal-body h4 {
+.skills-modal-body h4 {
     font-size: 1.3em;
     font-weight: 600;
     margin: 15px 0 10px;
 }
 
-.services-modal-body ul li {
+.skills-modal-body ul li {
     margin-top: 15px;
 }
 
-.services-modal-body ul li i {
+.skills-modal-body ul li i {
     color: var(--second-color);
 }
 
