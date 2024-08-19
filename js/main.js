@@ -4,6 +4,30 @@ window.addEventListener("scroll", function () {
     header.classList.toggle("sticky", window.scrollY > 0);
 });
 
+// Scroll to top
+// Get the scroll to top button
+const scrollToTopBtn = document.getElementById("scrollToTop");
+
+// Add an event listener for scroll events
+window.onscroll = function() {
+    // Show the button when the user scrolls down 100px from the top
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+};
+
+// Optional smooth scrolling behavior when the button is clicked
+scrollToTopBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+
 // Gallery section
 const galleryItems = document.querySelector(".gallery-items").children;
 const prev = document.querySelector(".prev");

@@ -264,6 +264,33 @@ header.sticky .nav-bar {
     }
 }
 
+/* Scroll to Top Icon Styles */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--second-color);
+    color: #fff;
+    padding: 10px 10px 10px;
+    border-radius: 5px; 
+    font-size: 1.5em;
+    display: none;
+    z-index: 1000;
+    cursor: pointer;
+    text-align: center; 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.1);
+}
+
+.scroll-to-top i {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 /*=======Common styles for all sections=======*/
 .flex-center {
     display: flex;
@@ -386,18 +413,29 @@ header.sticky .nav-bar {
 }
 
 /*=======Gallery section=======*/
-.gallery .gallery-items .item {
-    width: 25%;
-    float: left;
-    position: relative;
+/* Container for centering the gallery */
+.gallery-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the gallery items horizontally */
+    margin: 0 auto; /* Center the gallery container itself */
+    max-width: 1200px; /* Adjust based on your design */
+    padding: 0 20px; /* Optional: add padding if needed */
 }
 
-.gallery .gallery-items .item.hide {
+.gallery-items .item {
+    width: 23%;
+    position: relative;
+    margin: 0.5%; /* Adjust spacing between items */
+}
+
+.gallery-items .item.hide {
     display: none;
 }
 
-.gallery .gallery-items .item.show {
+.gallery-items .item.show {
     display: block;
+    animation: show 0.5s ease-in-out;
 }
 
 @keyframes show {
@@ -411,14 +449,14 @@ header.sticky .nav-bar {
     }
 }
 
-.gallery .gallery-items .item img {
+.gallery-items .item img {
     display: block;
     width: 100%;
 }
 
-.gallery .gallery-items .item .caption {
+.gallery-items .item .caption {
     position: absolute;
-    left: 0px;
+    left: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
@@ -426,24 +464,23 @@ header.sticky .nav-bar {
     color: #fff;
 }
 
-.gallery .pagination {
+.pagination {
     width: 100%;
-    float: left;
     padding: 15px;
     text-align: center;
 }
 
-.gallery .pagination div {
+.pagination div {
     display: inline-block;
     margin: 0 10px;
 }
 
-.gallery .pagination .page {
+.pagination .page {
     color: gray;
 }
 
-.gallery .pagination .prev,
-.gallery .pagination .next {
+.pagination .prev,
+.pagination .next {
     color: #000;
     border: 1px solid #000;
     font-size: 15px;
@@ -451,14 +488,18 @@ header.sticky .nav-bar {
     cursor: pointer;
 }
 
-.gallery .pagination .prev.disabled,
-.gallery .pagination .next.disabled {
+.pagination .prev.disabled,
+.pagination .next.disabled {
     border-color: gray;
     color: gray;
     pointer-events: none;
 }
 
 /*=======Skills section=======*/
+.skills{
+    margin-bottom: -10px;
+}
+
 .skills .container .content {
     width: 100%;
 }
@@ -1211,6 +1252,6 @@ footer a {
 
     /*=======Gallery section=======*/
     .gallery-item {
-        flex: 1 1 calc(50% - 20px); /* 2 item per baris dengan jarak 20px */
+        flex: 1 1 calc(100% - 20px); 
     }
 }
