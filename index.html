@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Portofolio | Reynaldi</title>
+        <link rel="icon" type="png" href="images/icon tab.png">
         <link rel="stylesheet" href="css/style.css" />
         <!-- Link font awesome cdn -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
@@ -54,6 +55,28 @@
         <a href="#home" class="scroll-to-top" id="scrollToTop">
             <i class="fa-solid fa-arrow-up"></i>
         </a>
+
+        <!-- Visitor section -->
+        <section class="visit section" id="visit">
+            <div class="container flex-center">
+                <div class="content flex-center">
+                    <!-- Visitor Counter and Contact Form Counter in horizontal layout -->
+                    <div class="visit">
+                        <!-- Visitor Counter -->
+                        <div>
+                            <i class="fa-solid fa-users"></i>
+                            <div class="visitor-counter">Visitors: <span id="visitorCount">0</span></div>
+                        </div>
+
+                        <!-- Contact Form Counter -->
+                        <div>
+                            <i class="fa-solid fa-envelope"></i>
+                            <div class="contact-counter">Form Submitted: <span id="contactCount">0</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!--=======About section=======-->
         <section class="about section" id="about">
@@ -603,12 +626,9 @@
                 <p>© 2024 by Coding Snow. All rights reserved.</p>
             </div>
         </footer>
-
         <!--=======External scripts=======-->
         <script src="js/main.js"></script>
-        <!-- Contact Form -->
-        <script src="https://smtpjs.com/v3/smtp.js"></script>
         <!-- SweetAlerts -->
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
 </html>

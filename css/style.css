@@ -345,6 +345,36 @@ header.sticky .nav-bar {
     flex-direction: column;
 }
 
+/*=======Visitor section=======*/
+.visit {
+    background: var(--card-bg-color);
+    padding: 1.5rem;
+    box-shadow: 0px 0px 10px rgb(0 0 0/5%);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.visit div {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.visit i {
+    font-size: 2rem; 
+    color: var(--second-color);
+    margin-right: 0.5rem;
+}
+
+.visit .visitor-counter,
+.visit .contact-counter {
+    font-size: 1.5rem; 
+    color: var(--first-color);
+}
+
 /*=======About section=======*/
 .about .container .content {
     column-gap: 40px;
@@ -413,20 +443,19 @@ header.sticky .nav-bar {
 }
 
 /*=======Gallery section=======*/
-/* Container for centering the gallery */
 .gallery-items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Center the gallery items horizontally */
-    margin: 0 auto; /* Center the gallery container itself */
-    max-width: 1200px; /* Adjust based on your design */
-    padding: 0 20px; /* Optional: add padding if needed */
+    justify-content: center; 
+    margin: 0 auto; 
+    max-width: 1200px; 
+    padding: 0 20px; 
 }
 
 .gallery-items .item {
     width: 23%;
     position: relative;
-    margin: 0.5%; /* Adjust spacing between items */
+    margin: 0.5%; 
 }
 
 .gallery-items .item.hide {
@@ -1210,9 +1239,28 @@ footer a {
         background: rgba(255, 255, 255, 0.1);
         margin: 10px 0 22px;
     }
+
+    /*=======Visitor Counter Section=======*/
+    .visit {
+        flex-direction: column; 
+        padding: 1rem;
+        align-items: center; 
+    }
+
+    .visit div {
+        margin: 10px 0; 
+    }
+
+    .visit i {
+        font-size: 1.8rem;
+    }
+
+    .visit .visitor-counter,
+    .visit .contact-counter {
+        font-size: 1.2rem; 
+    }
 }
 
-/*=======Media query max-width 730px=======*/
 @media screen and (max-width: 730px) {
     /*=======Common styles for all sections=======*/
     body {
@@ -1252,6 +1300,31 @@ footer a {
 
     /*=======Gallery section=======*/
     .gallery-item {
-        flex: 1 1 calc(100% - 20px); 
+        flex: 1 1 calc(100% - 10px); 
+    }
+
+    /*=======Visitor Counter Section=======*/
+    .visit {
+        flex-direction: column; 
+        padding: 1rem;
+        align-items: center;
+    }
+
+    .visit div {
+        margin: 8px 0; 
+    }
+
+    .visit i {
+        font-size: 1.6rem; 
+        justify-content: flex-start;
+    }
+
+    .visit .visitor-counter,
+    .visit .contact-counter {
+        font-size: 1rem; 
+    }
+
+    body {
+        overflow-x: hidden; 
     }
 }
