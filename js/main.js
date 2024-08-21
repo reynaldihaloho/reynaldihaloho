@@ -26,48 +26,6 @@ scrollToTopBtn.addEventListener('click', function(event) {
     });
 });
 
-// Visitor count variables
-let visitorCount = 0;
-let contactCount = 0;
-
-// Function to simulate visitor count increment
-function updateVisitorCount() {
-    // Simulate a new visitor every time the page is loaded
-    visitorCount++;
-    document.getElementById('visitorCount').innerText = visitorCount;
-
-    // Save visitor count to localStorage
-    localStorage.setItem('visitorCount', visitorCount);
-}
-
-// Function to update contact form count for specific email
-function updateContactCount(email) {
-    let contactCounts = JSON.parse(localStorage.getItem('contactCounts')) || {};
-    if (email) {
-        contactCounts[email] = (contactCounts[email] || 0) + 1;
-        localStorage.setItem('contactCounts', JSON.stringify(contactCounts));
-        // Update the displayed count
-        document.getElementById('contactCount').innerText = contactCounts[email];
-    }
-}
-
-// Load visitor count from localStorage if available
-window.onload = function() {
-    if (localStorage.getItem('visitorCount')) {
-        visitorCount = parseInt(localStorage.getItem('visitorCount'));
-        document.getElementById('visitorCount').innerText = visitorCount;
-    }
-
-    // Initialize contact count display
-    const email = ''; // Replace with email if known or manage it dynamically
-    let contactCounts = JSON.parse(localStorage.getItem('contactCounts')) || {};
-    if (email) {
-        document.getElementById('contactCount').innerText = contactCounts[email] || 0;
-    }
-}
-
-// Call the function to update visitor count
-updateVisitorCount();
 
 // Gallery section
 const galleryItems = document.querySelector(".gallery-items").children;
@@ -257,8 +215,6 @@ if (form) {
                     icon: "success",
                 });
                 form.reset();
-                // Update contact count
-                updateContactCount(email);
             })
             .catch((error) => {
                 console.error("Error!", error.message);
