@@ -8,7 +8,7 @@ window.addEventListener("scroll", function () {
 const scrollToTopBtn = document.getElementById("scrollToTop");
 
 // Add an event listener for scroll events
-window.onscroll = function() {
+window.onscroll = function () {
     // Show the button when the user scrolls down 100px from the top
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         scrollToTopBtn.style.display = "block";
@@ -18,37 +18,43 @@ window.onscroll = function() {
 };
 
 // Optional smooth scrolling behavior when the button is clicked
-scrollToTopBtn.addEventListener('click', function(event) {
+scrollToTopBtn.addEventListener("click", function (event) {
     event.preventDefault();
     window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: "smooth",
     });
 });
-
 
 // Gallery section
 const galleryItems = document.querySelector(".gallery-items").children;
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
-const page = document.querySelector(".page-num");
+const pageNum = document.querySelector(".page-num");
+
 const maxItem = 8;
 let index = 1;
 
 const pagination = Math.ceil(galleryItems.length / maxItem);
 
 prev.addEventListener("click", function () {
-    index--;
-    check();
-    showItems();
+    if (index > 1) {
+        index--;
+        check();
+        showItems();
+    }
 });
+
 next.addEventListener("click", function () {
-    index++;
-    check();
-    showItems();
+    if (index < pagination) {
+        index++;
+        check();
+        showItems();
+    }
 });
 
 function check() {
+    // Disable/Enable buttons based on current index
     if (index == pagination) {
         next.classList.add("disabled");
     } else {
@@ -60,6 +66,9 @@ function check() {
     } else {
         prev.classList.remove("disabled");
     }
+
+    // Update the page number
+    pageNum.textContent = index;
 }
 
 function showItems() {
@@ -71,7 +80,6 @@ function showItems() {
             galleryItems[i].classList.remove("hide");
             galleryItems[i].classList.add("show");
         }
-        page.innerHTML = index;
     }
 }
 
@@ -79,6 +87,7 @@ window.onload = function () {
     showItems();
     check();
 };
+
 
 // Skills section - Modal
 const skillModals = document.querySelectorAll(".skills-modal");

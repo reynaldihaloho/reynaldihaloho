@@ -259,6 +259,7 @@ header.sticky .nav-bar {
     0% {
         transform: translateY(0);
     }
+
     30% {
         transform: translateY(10px);
     }
@@ -272,12 +273,12 @@ header.sticky .nav-bar {
     background-color: var(--second-color);
     color: #fff;
     padding: 10px 10px 10px;
-    border-radius: 5px; 
+    border-radius: 5px;
     font-size: 1.5em;
     display: none;
     z-index: 1000;
     cursor: pointer;
-    text-align: center; 
+    text-align: center;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -343,36 +344,6 @@ header.sticky .nav-bar {
 .container {
     position: relative;
     flex-direction: column;
-}
-
-/*=======Visitor section=======*/
-.visit {
-    background: var(--card-bg-color);
-    padding: 1.5rem;
-    box-shadow: 0px 0px 10px rgb(0 0 0/5%);
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap; 
-}
-
-.visit div {
-    display: flex;
-    align-items: center;
-    margin: 0 1rem;
-}
-
-.visit i {
-    font-size: 2rem; 
-    color: var(--second-color);
-    margin-right: 0.5rem;
-}
-
-.visit .visitor-counter,
-.visit .contact-counter {
-    font-size: 1.5rem; 
-    color: var(--first-color);
 }
 
 /*=======About section=======*/
@@ -446,16 +417,16 @@ header.sticky .nav-bar {
 .gallery-items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
-    margin: 0 auto; 
-    max-width: 1200px; 
-    padding: 0 20px; 
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
 }
 
 .gallery-items .item {
     width: 23%;
     position: relative;
-    margin: 0.5%; 
+    margin: 0.5%;
 }
 
 .gallery-items .item.hide {
@@ -472,6 +443,7 @@ header.sticky .nav-bar {
         opacity: 0;
         transform: scale(0.9);
     }
+
     100% {
         opacity: 1;
         transform: scale(1);
@@ -525,7 +497,7 @@ header.sticky .nav-bar {
 }
 
 /*=======Skills section=======*/
-.skills{
+.skills {
     margin-bottom: -10px;
 }
 
@@ -716,7 +688,7 @@ header.sticky .nav-bar {
     box-shadow: var(--box-shadow);
 }
 
-.skills-card > i {
+.skills-card>i {
     color: var(--second-color);
     font-size: 3em;
     margin-bottom: 30px;
@@ -1018,10 +990,10 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: var(--second-color);
+    background: #000;
     width: 100%;
     margin-top: 50px;
-    padding: 3rem 2rem;
+    padding: 0.8rem 0.8rem;
     color: #fff;
 }
 
@@ -1062,7 +1034,7 @@ footer a {
 .footer-container .follow h3 {
     font-size: 1.1em;
     font-weight: 500;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .footer-container .info ul,
@@ -1082,11 +1054,12 @@ footer a {
 .footer-copy-right p {
     font-size: var(--normal-font-size);
     font-weight: 300;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 /*=======Media query max-width 1070px=======*/
 @media screen and (max-width: 1070px) {
+
     /*=======Header navigation menu=======*/
     .navigation {
         position: fixed;
@@ -1189,7 +1162,8 @@ footer a {
 
     /*=======Gallery section=======*/
     .gallery-item {
-        flex: 1 1 calc(33.33% - 20px); /* 3 item per baris dengan jarak 20px */
+        flex: 1 1 calc(33.33% - 20px);
+        /* 3 item per baris dengan jarak 20px */
     }
 
     /*=======Contact section=======*/
@@ -1239,29 +1213,10 @@ footer a {
         background: rgba(255, 255, 255, 0.1);
         margin: 10px 0 22px;
     }
-
-    /*=======Visitor Counter Section=======*/
-    .visit {
-        flex-direction: column; 
-        padding: 1rem;
-        align-items: center; 
-    }
-
-    .visit div {
-        margin: 10px 0; 
-    }
-
-    .visit i {
-        font-size: 1.8rem;
-    }
-
-    .visit .visitor-counter,
-    .visit .contact-counter {
-        font-size: 1.2rem; 
-    }
 }
 
 @media screen and (max-width: 730px) {
+
     /*=======Common styles for all sections=======*/
     body {
         margin: 5rem 0 0 0;
@@ -1300,31 +1255,6 @@ footer a {
 
     /*=======Gallery section=======*/
     .gallery-item {
-        flex: 1 1 calc(100% - 10px); 
-    }
-
-    /*=======Visitor Counter Section=======*/
-    .visit {
-        flex-direction: column; 
-        padding: 1rem;
-        align-items: center;
-    }
-
-    .visit div {
-        margin: 8px 0; 
-    }
-
-    .visit i {
-        font-size: 1.6rem; 
-        justify-content: flex-start;
-    }
-
-    .visit .visitor-counter,
-    .visit .contact-counter {
-        font-size: 1rem; 
-    }
-
-    body {
-        overflow-x: hidden; 
+        flex: 1 1 calc(100% - 10px);
     }
 }
