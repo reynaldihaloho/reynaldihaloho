@@ -26,69 +26,6 @@ scrollToTopBtn.addEventListener("click", function (event) {
     });
 });
 
-// Gallery section
-const galleryItems = document.querySelector(".gallery-items").children;
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
-const pageNum = document.querySelector(".page-num");
-
-const maxItem = 8;
-let index = 1;
-
-const pagination = Math.ceil(galleryItems.length / maxItem);
-
-prev.addEventListener("click", function () {
-    if (index > 1) {
-        index--;
-        check();
-        showItems();
-    }
-});
-
-next.addEventListener("click", function () {
-    if (index < pagination) {
-        index++;
-        check();
-        showItems();
-    }
-});
-
-function check() {
-    // Disable/Enable buttons based on current index
-    if (index == pagination) {
-        next.classList.add("disabled");
-    } else {
-        next.classList.remove("disabled");
-    }
-
-    if (index == 1) {
-        prev.classList.add("disabled");
-    } else {
-        prev.classList.remove("disabled");
-    }
-
-    // Update the page number
-    pageNum.textContent = index;
-}
-
-function showItems() {
-    for (let i = 0; i < galleryItems.length; i++) {
-        galleryItems[i].classList.remove("show");
-        galleryItems[i].classList.add("hide");
-
-        if (i >= index * maxItem - maxItem && i < index * maxItem) {
-            galleryItems[i].classList.remove("hide");
-            galleryItems[i].classList.add("show");
-        }
-    }
-}
-
-window.onload = function () {
-    showItems();
-    check();
-};
-
-
 // Skills section - Modal
 const skillModals = document.querySelectorAll(".skills-modal");
 const learnmoreBtns = document.querySelectorAll(".learns-more-btn");

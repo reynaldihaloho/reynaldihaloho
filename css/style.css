@@ -414,86 +414,44 @@ header.sticky .nav-bar {
 }
 
 /*=======Gallery section=======*/
-.gallery-items {
+.gallery-items{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0 20px;
+    width: max-content;
+    gap: 1rem;
 }
 
-.gallery-items .item {
-    width: 23%;
-    position: relative;
-    margin: 0.5%;
+.horizontal-scroll{
+    width: 100%;
+    scrollbar-color: transparent transparent;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
 }
 
-.gallery-items .item.hide {
+.horizontal-scroll::-webkit-scrollbar{
     display: none;
 }
 
-.gallery-items .item.show {
-    display: block;
-    animation: show 0.5s ease-in-out;
-}
-
-@keyframes show {
-    0% {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.gallery-items .item img {
-    display: block;
-    width: 100%;
-}
-
-.gallery-items .item .caption {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    width: 100%;
-    color: #fff;
-}
-
-.pagination {
-    width: 100%;
-    padding: 15px;
-    text-align: center;
-}
-
-.pagination div {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.pagination .page {
-    color: gray;
-}
-
-.pagination .prev,
-.pagination .next {
-    color: #000;
-    border: 1px solid #000;
-    font-size: 15px;
-    padding: 7px 15px;
+.items{
+    scroll-snap-align: center;
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
 }
 
-.pagination .prev.disabled,
-.pagination .next.disabled {
-    border-color: gray;
-    color: gray;
-    pointer-events: none;
+.items figcaption{
+    position: absolute;
+    bottom: -3rem;
+    background-color: rgba(0, 0, 0, 0.76);
+    padding: 1rem 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    transition: 0.5s ease;
+}
+
+.items:hover figcaption{
+    bottom: 0;
+    cursor: pointer;
 }
 
 /*=======Skills section=======*/
