@@ -432,7 +432,7 @@ header.sticky .nav-bar {
 }
 
 .items{
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     position: relative;
     overflow: hidden;
     cursor: pointer;
